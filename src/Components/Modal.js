@@ -1,5 +1,8 @@
 import React from "react";
+import Good from '../assets/Good.png'
 import "./Modal.css";
+import { Link } from "react-router-dom";
+
 
 function Modal({ setOpenModal }) {
   return (
@@ -15,21 +18,22 @@ function Modal({ setOpenModal }) {
           </button>
         </div>
         <div className="title">
-          <h1>Are You Sure You Want to Continue?</h1>
+          <img src={Good} alt='good' height={50} width = {50} className="mx-auto"/>
+          <h2>Password reset successful</h2>
         </div>
         <div className="body">
-          <p>The next page looks amazing. Hope you want to go there!</p>
+          <p>You can now use your new password to log in to your account.</p>
         </div>
         <div className="footer">
-          <button
+          {/* <button
             onClick={() => {
               setOpenModal(false);
             }}
             id="cancelBtn"
           >
             Cancel
-          </button>
-          <button>Continue</button>
+          </button> */}
+          <button>Login</button>
         </div>
       </div>
     </div>

@@ -37,6 +37,7 @@
     object-fit: cover;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 25px;
     background-color: white;
   }
@@ -44,7 +45,7 @@
   .modalContainer .title {
     display: inline-block;
     text-align: center;
-    margin-top: 10px;
+    /* margin-top: 10px; */
   }
   
   .titleCloseBtn {
@@ -64,7 +65,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.7rem;
     text-align: center;
   }
   
