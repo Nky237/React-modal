@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './NewPassword.css'
 import Logo from '../assets/Logo.png'
 import Good from '../assets/Good.png'
 import three from '../assets/three.png'
 import { AiFillEye } from 'react-icons/ai';
+import Modal from './Modal'
 
 
 const NewPassword = () => {
-  return (
+    const[modalOpen, setModalOpen] = useState(false)
+    const handleSubmit = (e)=>{
+        e.preventDefault()
+        setModalOpen(true)     
+    }
+    return (
     <div className='wrapper flex'>
        <div className='conic-bg'>
         <div className='bg-trans flex flex-col items-center justify-center text-center text-white'>
@@ -28,7 +34,7 @@ const NewPassword = () => {
                     </div>
                     <p className='pt-3'>Kindly set a new password and confirm the password</p>
                 </div>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className='flex flex-col mt-3 relative'>
                         <label>Password</label>
                         <input placeholder='Type new password'style={{'border': '1px solid black'}}
@@ -43,7 +49,7 @@ const NewPassword = () => {
                         <AiFillEye className='absolute right-2 bottom-3' />
                     </div> 
                     <button className='mt-4 bg-blue-500'
-                    style={{'border': '1px solid black', 'width' : '100%', 'color':'white'}}>
+                        style={{'border': '1px solid black', 'width' : '100%', 'color':'white'}}>
                          Save Password</button>
                         <div className='text-center pt-3'>
                             <span>Remember Password?</span>
@@ -53,6 +59,7 @@ const NewPassword = () => {
             </div>
         </div>
        </div>
+       {modalOpen && <Modal setOpenModal={setModalOpen} />}
     </div>
   )
 }
